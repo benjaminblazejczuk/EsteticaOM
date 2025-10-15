@@ -1,0 +1,13 @@
+#TituloContainer {
+  position: fixed;      /* lo mantiene fijo en la pantalla */
+  left: 150px;              /* pegado al lado izquierdo */
+  top: 50%;             /* posicion vertical en el medio */
+  transform: translateY(-50%); /* centra exactamente vertical */
+  padding-left: 40px;   /* separación desde el borde */
+}
+
+#Titulo {
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 100px;
+  color: #ac14a2;
+}
