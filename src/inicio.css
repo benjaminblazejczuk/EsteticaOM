@@ -1,13 +1,139 @@
-#TituloContainer {
-  position: fixed;      /* lo mantiene fijo en la pantalla */
-  left: 150px;              /* pegado al lado izquierdo */
-  top: 50%;             /* posicion vertical en el medio */
-  transform: translateY(-50%); /* centra exactamente vertical */
-  padding-left: 40px;   /* separación desde el borde */
+/* 🌸 CONTENEDOR PRINCIPAL */
+.inicio-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: linear-gradient(to bottom, #fff6f0,);
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
+/* 🌸 CONTENEDOR DEL TÍTULO Y CONTENIDO */
+#TituloContainer {
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 120px;
+  text-align: center;
+  padding: 0 30px 80px 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* 🌸 TÍTULO PRINCIPAL */
 #Titulo {
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: 100px;
+  font-family: 'Playfair Display', serif;
+  font-size: 96px;
+  color: #a61fa8;
+  line-height: 1.1;
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 12px rgba(172, 20, 162, 0.15);
+  animation: fadeInDown 1.2s ease;
+}
+
+/* 🌸 IMÁGENES */
+#TituloContainer img {
+  width: 100%;
+  max-width: 550px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 24px;
+  margin: 30px auto;
+  display: block;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease;
+  opacity: 0;
+  animation: fadeInUp 1.5s ease forwards;
+}
+
+#TituloContainer img:nth-of-type(1) { animation-delay: 0.3s; }
+#TituloContainer img:nth-of-type(2) { animation-delay: 0.5s; }
+#TituloContainer img:nth-of-type(3) { animation-delay: 0.7s; }
+
+/* 🌸 TEXTOS DE SECCIÓN */
+#TituloContainer h2 {
+  font-size: 32px;
   color: #ac14a2;
+  margin-top: 30px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+#TituloContainer p {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: 15px auto 50px auto;
+  line-height: 1.8;
+  text-align: justify;
+  animation: fadeIn 1.3s ease-in-out;
+}
+
+/* 🌸 EFECTO HOVER */
+#TituloContainer img:hover {
+  transform: scale(1.06);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+  filter: brightness(1.08) saturate(1.05);
+}
+
+/* 🌸 ANIMACIONES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 🌸 RESPONSIVE */
+@media (max-width: 900px) {
+  #Titulo {
+    font-size: 70px;
+  }
+
+  #TituloContainer h2 {
+    font-size: 26px;
+  }
+
+  #TituloContainer p {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 600px) {
+  #Titulo {
+    font-size: 46px;
+  }
+
+  #TituloContainer {
+    margin-top: 100px;
+    padding: 0 15px;
+  }
+
+  #TituloContainer img {
+    width: 95%;
+  }
+
+  #TituloContainer h2 {
+    font-size: 22px;
+  }
+
+  #TituloContainer p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
 }

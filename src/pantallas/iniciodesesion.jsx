@@ -5,6 +5,8 @@ import Submit from "../componentes/submit"
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../formularios.css"
+import fondo from "../img/fondo.webp";
+import Navbar from "../componentes/Navbar";
 
 export default function Sesion(){
     // Definimos los estados para almacenar lo que escribe el usuario
@@ -28,6 +30,7 @@ export default function Sesion(){
 
     return (
             <>
+              <Navbar />
             <div className="form-box">
                 <form method="post" onSubmit={HandleSubmit}>
                     <Input name="nombre" text="Nombre:" type="text" value={nombre} onChange={(e) => setNombre(e.target.value)}/> 
